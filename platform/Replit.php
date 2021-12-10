@@ -342,13 +342,6 @@ function OnekeyUpate($auth = 'qkqpttgf', $project = 'OneManager-php', $branch = 
     //error_log1($outPath);
     if ($outPath=='') return 0;
 
-    //unlink($outPath.'/config.php');
-    $response = rename($projectPath . $slash . '.data' . $slash . 'config.php', $outPath . $slash . '.data' . $slash . 'config.php');
-    if (!$response) {
-        $tmp1['code'] = "Move Failed";
-        $tmp1['message'] = "Can not move " . $projectPath . $slash . '.data' . $slash . 'config.php' . " to " . $outPath . $slash . '.data' . $slash . 'config.php';
-        return json_encode($tmp1);
-    }
     return moveFolder($outPath, $projectPath, $slash);
 }
 
